@@ -29,7 +29,7 @@ if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon_Admin_Profile' ) ) {
 		}
 
 		/**
-		 * Get Address Fields for the edit user pages.
+		 * Get MailPoet Fields for the edit user pages.
 		 *
 		 * @return array Fields to display which are filtered through mailpoet_paid_memberships_pro_addon_user_meta_fields before being returned
 		 */

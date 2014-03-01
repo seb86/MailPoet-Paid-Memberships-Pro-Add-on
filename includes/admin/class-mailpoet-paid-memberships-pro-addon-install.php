@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		}
 
 		/**
-		 * Install Plugin Name
+		 * Install MailPoet Wishlist Member Add-on
 		 */
 		public function install() {
 			// Queue upgrades

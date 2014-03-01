@@ -29,7 +29,7 @@ class MailPoet_Paid_Memberships_Pro_Addon_Admin_Menus {
 	 * Add menu items
 	 */
 	public function admin_menu() {
-		$settings_page = add_submenu_page( 'paid-memberships-pro', __( 'MailPoet Paid Memberships Pro Settings', 'mailpoet_paid_memberships_pro_addon' ),  __( 'MailPoet PMPro', 'mailpoet_paid_memberships_pro_addon' ) , 'manage_options', 'paid-memberships-pro-settings', array( &$this, 'settings_page' ) );
+		$settings_page = add_submenu_page( 'pmpro-membershiplevels', __( 'MailPoet Paid Memberships Pro Settings', 'mailpoet_paid_memberships_pro_addon' ),  __( 'MailPoet PMPro', 'mailpoet_paid_memberships_pro_addon' ) , 'manage_options', 'paid-memberships-pro-settings', array( &$this, 'settings_page' ) );
 	}
 
 	/**

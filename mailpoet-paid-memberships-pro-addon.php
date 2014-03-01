@@ -2,7 +2,7 @@
 /*
  * Plugin Name: MailPoet Paid Memberships Pro Add-on
  * Plugin URI: http://www.wordpress.org/plugins/mailpoet-paid-memberships-pro-add-on/
- * Description: description needs to be added.
+ * Description: Adds a checkbox on checkout page for your customers to subscribe to your MailPoet newsletters. 
  * Version: 1.0.0
  * Author: Sebs Studio
  * Author URI: http://www.sebs-studio.com
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon' ) ) {
 
 /**
- * Main MailPoet Paid Memberships Pro Addon Class
+ * Main MailPoet Paid Memberships Pro Add-on Class
  *
  * @class MailPoet_Paid_Memberships_Pro_Addon
  * @version 1.0.0

@@ -52,9 +52,6 @@ class MailPoet_Paid_Memberships_Pro_Addon_Admin_Settings {
 		do_action( 'mailpoet_paid_memberships_pro_add_on_update_options_' . $current_tab );
 		do_action( 'mailpoet_paid_memberships_pro_add_on_update_options' );
 
-		// Clear any unwanted data
-		delete_transient( 'mailpoet_paid_memberships_pro_add_on_cache_excluded_uris' );
-
 		self::add_message( __( 'Your settings have been saved.', 'mailpoet_paid_memberships_pro_add_on' ) );
 
 		do_action( 'mailpoet_paid_memberships_pro_add_on_settings_saved' );

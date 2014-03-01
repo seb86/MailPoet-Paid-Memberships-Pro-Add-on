@@ -36,7 +36,7 @@ if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon_Admin' ) ) {
 				include( 'class-mailpoet-paid-memberships-pro-addon-admin-notices.php' );
 
 				// Help
-				if ( apply_filters( 'plugin_name_enable_admin_help_tab', true ) ) {
+				if ( apply_filters( 'mailpoet_paid_memberships_pro_add_on_enable_admin_help_tab', true ) ) {
 					include( 'class-mailpoet-paid-memberships-pro-addon-admin-help.php' );
 				}
 			}
