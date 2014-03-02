@@ -84,6 +84,20 @@ final class MailPoet_Paid_Memberships_Pro_Addon {
 	public $doc_url = "http://docs.sebs-studio.com/extension/mailpoet/mailpoet-paid-memberships-pro-add-on/";
 
 	/**
+	 * GitHub Username
+	 *
+	 * @var string
+	 */
+	public $github_username = "seb86";
+
+	/**
+	 * GitHub Repo URL
+	 *
+	 * @var string
+	 */
+	public $github_repo_url = "https://github.com/username/MailPoet-Paid-Memberships-Pro-Add-on/";
+
+	/**
 	 * Main MailPoet Paid Memberships Pro Add-on Instance
 	 *
 	 * Ensures only one instance of  is loaded or can be loaded.
@@ -172,6 +186,9 @@ final class MailPoet_Paid_Memberships_Pro_Addon {
 		define( 'MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_WP_VERSION_REQUIRE', $this->wp_version_min );
 
 		define( 'MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_README_FILE', 'http://plugins.svn.wordpress.org/mailpoet-paid-memberships-pro-add-on/trunk/readme.txt' );
+
+		define( 'GITHUB_USERNAME', $this->github_username );
+		define( 'GITHUB_REPO_URL' , str_replace( 'username', GITHUB_USERNAME, $this->github_repo_url ) );
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		define( 'MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_SCRIPT_MODE', $suffix );

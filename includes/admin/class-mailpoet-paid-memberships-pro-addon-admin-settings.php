@@ -30,7 +30,7 @@ class MailPoet_Paid_Memberships_Pro_Addon_Admin_Settings {
 
 			include_once( 'settings/class-mailpoet-paid-memberships-pro-addon-settings-page.php' );
 
-			$settings[] = include( 'settings/class-mailpoet-paid-memberships-pro-addon-settings-general.php' );
+			$settings[] = include( 'settings/class-mailpoet-paid-memberships-pro-addon-settings.php' );
 
 			self::$settings = apply_filters( 'mailpoet_paid_memberships_pro_add_on_get_settings_pages', $settings );
 		}
@@ -134,7 +134,7 @@ class MailPoet_Paid_Memberships_Pro_Addon_Admin_Settings {
 		// Get tabs for the settings page
 		$tabs = apply_filters( 'mailpoet_paid_memberships_pro_add_on_settings_tabs_array', array() );
 
-		include 'views/html-admin-settings.php';
+		include( 'views/html-admin-settings.php' );
 	}
 
 	/**
