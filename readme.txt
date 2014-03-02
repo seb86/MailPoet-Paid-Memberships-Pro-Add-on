@@ -10,6 +10,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ## Description
 
+> This plugin requires <a href="http://wordpress.org/plugins/wysija-newsletters/" rel="nofollow">MailPoet plugin</a> and <a href="https://wordpress.org/plugins/paid-memberships-pro/" rel="nofollow">Paid Memberships Pro plugin</a>.
+
 Adds a checkbox on checkout page for your customers to subscribe to your MailPoet newsletters.
 
 ## Localization
@@ -68,4 +70,4 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 __1.0.0 - 28/02/2014__
 
-* Working Progress Release.s
+* Working Progress Release

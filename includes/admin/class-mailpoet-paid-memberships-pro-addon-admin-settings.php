@@ -102,7 +102,7 @@ class MailPoet_Paid_Memberships_Pro_Addon_Admin_Settings {
 
 		do_action( 'mailpoet_paid_memberships_pro_add_on_settings_start' );
 
-		wp_enqueue_script( 'mailpoet_paid_memberships_pro_add_on_settings', MailPoet_Paid_Memberships_Pro_Addon()->plugin_url() . '/assets/js/admin/settings.min.js', array( 'jquery', 'jquery-ui-datepicker', 'jquery-ui-sortable', 'iris' ), MailPoet_Paid_Memberships_Pro_Addon()->version, true );
+		wp_enqueue_script( 'mailpoet_paid_memberships_pro_add_on_settings', MailPoet_Paid_Memberships_Pro_Addon()->plugin_url() . '/assets/js/admin/settings' . SCRIPT_DEBUG . '.js', array( 'jquery' ), MailPoet_Paid_Memberships_Pro_Addon()->version, true );
 
 		wp_localize_script( 'mailpoet_paid_memberships_pro_add_on_settings', 'mailpoet_paid_memberships_pro_add_on_settings_params', array(
 			'i18n_nav_warning' => __( 'The changes you made will be lost if you navigate away from this page.', 'mailpoet_paid_memberships_pro_add_on' )
@@ -574,6 +574,8 @@ class MailPoet_Paid_Memberships_Pro_Addon_Admin_Settings {
 
 		return true;
 	}
+
+} // end class
 
 } // end if class exists.
 

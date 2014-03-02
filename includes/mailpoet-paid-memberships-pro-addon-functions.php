@@ -9,8 +9,8 @@
  */
 
 // Add a checkbox field to the checkout page.
-function mailpoet_pmproship_addon_checkout_checkbox() {
-	global $sfirstname, $slastname;
+function mailpoet_pmpro_addon_checkout_checkbox() {
+	global $bfirstname, $blastname;
 ?>
 
 	<table id="pmpro_mailpoet_fields" class="pmpro_checkout top1em" width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -22,6 +22,12 @@ function mailpoet_pmproship_addon_checkout_checkbox() {
 	<tbody>
 		<tr>
 			<td>
+				<p id="sameasbilling_wrapper">
+				<input type="checkbox" id="sameasbilling" name="sameasbilling" value="1" <?php if(!empty($sameasbilling)) { ?>checked="checked"<?php } ?> /> 
+				<label for="sameasbilling" style="float: none; font-weight: normal; cursor: pointer;">
+				<?php echo apply_filters( 'mailpoet_pmpro_addon_subscribe_to_newsletter_label', __('Subscribe to our Newsletter', 'mailpoet_paid_memberships_pro_addon') ); ?>
+				</label>
+		</p>
 
 			</td>
 		</tr>
@@ -30,74 +36,72 @@ function mailpoet_pmproship_addon_checkout_checkbox() {
 <?php
 }
 
-// Update a user meta value on checkout
-function mailpoet_pmproship_addon_after_checkout($user_id) {
-	global $sfirstname, $slastname;
+// Get fields on checkout page
+function mailpoet_pmpro_addon_valid_gateways( $gateways ) {
+	global $subscribe;
 
-	if( !empty( $sameasbilling ) ) {
-		//set the shipping fields to be the same as the billing fields		
-		$sfirstname = get_user_meta($user_id, "pmpro_bfirstname", true);
-		$slastname = get_user_meta($user_id, "pmpro_blastname", true);
-		$saddress1 = get_user_meta($user_id, "pmpro_baddress1", true);
-		$saddress2 = get_user_meta($user_id, "pmpro_baddress2", true);
-		$scity = get_user_meta($user_id, "pmpro_bcity", true);
-		$sstate = get_user_meta($user_id, "pmpro_bstate", true);
-		$szipcode = get_user_meta($user_id, "pmpro_bzipcode", true);			
-		$scountry = get_user_meta($user_id, "pmpro_bcountry", true);					
+	if( !empty( $_REQUEST['sameasbilling'] ) ) {
+		$sameasbilling = true;	//we'll get the fields further down below
+	}
+	elseif( !empty( $_SESSION['sameasbilling'] ) ) {
+		// coming back from PayPal.
+		$sameasbilling = true;
+		unset($_SESSION['sameasbilling']);		
 	}
 
-	if( !empty( $saddress1 ) ) {
-		//update the shipping user meta
-		update_user_meta($user_id, "pmpro_sfirstname", $sfirstname);
-		update_user_meta($user_id, "pmpro_slastname", $slastname);	
-		update_user_meta($user_id, "pmpro_saddress1", $saddress1);
-		update_user_meta($user_id, "pmpro_saddress2", $saddress2);
-		update_user_meta($user_id, "pmpro_scity", $scity);
-		update_user_meta($user_id, "pmpro_sstate", $sstate);
-		update_user_meta($user_id, "pmpro_szipcode", $szipcode);		
-		update_user_meta($user_id, "pmpro_scountry", $scountry);		
-	}
+	return $gateways;
 }
 
-//adding shipping address to confirmation email
-function pmproship_pmpro_email_body($body, $pmpro_email)
-{
+// Update a user meta value on checkout
+function mailpoet_pmpro_addon_after_checkout( $user_id ) {
+	$firstname = get_user_meta($user_id, "pmpro_bfirstname", true);
+	$lastname = get_user_meta($user_id, "pmpro_blastname", true);
+
+	$mailpoet_checkout_subscribe = isset($_POST['mailpoet_checkout_subscribe']) ? 1 : 0;
+
+	// If the check box has been ticked then the customer is added to the MailPoet lists enabled.
+	if($mailpoet_checkout_subscribe == 1){
+		$checkout_lists = mailpoet_lists();
+
+		$user_data = array(
+			'email' 	=> $_POST['billing_email'],
+			'firstname' => $_POST['billing_first_name'],
+			'lastname' 	=> $_POST['billing_last_name']
+		);
+
+		$data_subscriber = array(
+			'user' 		=> $user_data,
+			'user_list' => array('list_ids' => array($checkout_lists))
+		);
+
+		$userHelper = &WYSIJA::get('user','helper');
+		$userHelper->addSubscriber($data_subscriber);
+	}
+	
+	update_user_meta($user_id, "user_subscribe_to_mailpoet_pmpro", $mailpoet_checkout_subscribe);
+}
+
+// Adding subscription confirmation to email
+function mailpoet_pmpro_addon_email_body( $body, $pmpro_email ) {
 	global $wpdb;
  
-	//get the user_id from the email
+	// Get the user_id from the email
 	$user_id = $wpdb->get_var("SELECT ID FROM $wpdb->users WHERE user_email = '" . $pmpro_email->data['user_email'] . "' LIMIT 1");
 	
-	if(!empty($user_id))
-	{
-		//does the user being emailed have a shipping address?		
-		$sfirstname = get_user_meta($user_id, "pmpro_sfirstname", true);
-		$slastname = get_user_meta($user_id, "pmpro_slastname", true);
-		$saddress1 = get_user_meta($user_id, "pmpro_saddress1", true);
-		$saddress2 = get_user_meta($user_id, "pmpro_saddress2", true);
-		$scity = get_user_meta($user_id, "pmpro_scity", true);
-		$sstate = get_user_meta($user_id, "pmpro_sstate", true);
-		$szipcode = get_user_meta($user_id, "pmpro_szipcode", true);
-		$scountry = get_user_meta($user_id, "pmpro_scountry", true);
-		
-		if(!empty($scity) && !empty($sstate))
-		{
-			$shipping_address = $sfirstname . " " . $slastname . "<br />" . $saddress1 . "<br />";
-			if($saddress2)
-				$shipping_address .= $saddress2 . "<br />";
-			$shipping_address .= $scity . ", " . $sstate . " " . $szipcode;								
+	if( !empty( $user_id ) ) {
+		$firstname = get_user_meta($user_id, "pmpro_bfirstname", true);
+		$lastname = get_user_meta($user_id, "pmpro_blastname", true);
+		$subscribed = get_user_meta($user_id, "mailpoet_pmpro_addon_subscribed", true);
+
+		// Add subscription confirmation above the billing information or above the log link
+		if( strpos( $body, "Billing Information:" ) ) {
+			$body = str_replace("Billing Information:", "Subscribed to Newsletter:<br />" . $subscribed . "<br /><br />Billing Information:", $body);
 		}
-		$shipping_address .= "<br />" . $scountry;
-		
-		if(!empty($shipping_address))
-		{
-			//squeeze the shipping address above the billing information or above the log link
-			if(strpos($body, "Billing Information:"))
-				$body = str_replace("Billing Information:", "Shipping Address:<br />" . $shipping_address . "<br /><br />Billing Information:", $body);
-			else
-				$body = str_replace("Log in to your membership", "Shipping Address:<br />" . $shipping_address . "<br /><br />Log in to your membership", $body);
-		}		
+		else {
+			$body = str_replace("Log in to your membership", "Subscribed to Newsletter:<br />" . $subscribed . "<br /><br />Log in to your membership", $body);
+		}
 	}
- 
+
 	return $body;
 }
 

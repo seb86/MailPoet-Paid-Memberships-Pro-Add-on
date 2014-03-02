@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailPoet Paid Memberships Pro Addon\n"
-"POT-Creation-Date: 2014-02-28 00:55+0100\n"
-"PO-Revision-Date: 2014-02-28 00:56+0100\n"
+"POT-Creation-Date: 2014-03-01 03:19+0100\n"
+"PO-Revision-Date: 2014-03-01 03:19+0100\n"
 "Last-Translator: Sebastien <sebastien@ocean-themes.com>\n"
 "Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
 "Language: en_US\n"
@@ -23,12 +23,13 @@ msgstr ""
 
 #: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-help.php:41
 msgid ""
-"Thank you for using Plugin Name :) Should you need help using MailPoet Paid "
-"Memberships Pro Add-on please read the documentation."
+"Thank you for using MailPoet Paid Memberships Pro Add-on :) Should you need "
+"help using MailPoet Paid Memberships Pro Add-on please read the "
+"documentation."
 msgstr ""
 
 #: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-help.php:43
-msgid "Plugin Name Documentation"
+msgid "MailPoet Paid Memberships Pro Add-on Documentation"
 msgstr ""
 
 #: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-help.php:49
@@ -53,7 +54,7 @@ msgstr ""
 #: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-help.php:63
 #, php-format
 msgid ""
-"If you find a bug within MailPoet Paid Memberships Pro core you can create a "
+"If you find a bug within MailPoet Paid Memberships Pro you can create a "
 "ticket via <a href=\"%s\">Github issues</a>. Ensure you read the <a href=\"%s"
 "\">contribution guide</a> prior to submitting your report. Be as descriptive "
 "as possible."
@@ -68,14 +69,10 @@ msgid "For more information:"
 msgstr ""
 
 #: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-help.php:71
-msgid "About MailPoet Paid Memberships Pro Add-on"
-msgstr ""
-
-#: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-help.php:72
 msgid "Project on WordPress.org"
 msgstr ""
 
-#: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-help.php:73
+#: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-help.php:72
 msgid "Project on Github"
 msgstr ""
 
@@ -104,11 +101,11 @@ msgstr ""
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-settings.php:58
+#: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-settings.php:55
 msgid "Your settings have been saved."
 msgstr ""
 
-#: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-settings.php:111
+#: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-settings.php:108
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 
@@ -166,12 +163,16 @@ msgid ""
 "Are you sure you wish to run the updater now?"
 msgstr ""
 
-#: mailpoet-paid-memberships-pro-addon.php:222
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:19
+msgid "Newsletter"
+msgstr ""
+
+#: mailpoet-paid-memberships-pro-addon.php:223
 #, php-format
 msgid "Sorry, <strong>%s</strong> requires WordPress "
 msgstr ""
 
-#: mailpoet-paid-memberships-pro-addon.php:233
+#: mailpoet-paid-memberships-pro-addon.php:234
 #, php-format
 msgid ""
 "Sorry, <strong>%s</strong> requires Paid Memberships Pro for this plugin to "
@@ -179,7 +180,7 @@ msgid ""
 "Pro</a></strong> first."
 msgstr ""
 
-#: mailpoet-paid-memberships-pro-addon.php:244
+#: mailpoet-paid-memberships-pro-addon.php:245
 #, php-format
 msgid ""
 "Sorry, <strong>%s</strong> requires MailPoet Newsletters for this plugin to "
