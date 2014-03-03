@@ -117,4 +117,17 @@ function label_checkbox_on_checkout() {
 		return __('Subscribe to our Newsletter', 'mailpoet_paid_memberships_pro_addon');
 	}
 }
+
+// Adds a bulletpoint to the confirmation page.
+function mailpoet_pmpro_addon_confirmation() {
+	global $current_user, $pmpro_invoice;
+
+	$subscribed = get_user_meta($current_user->id, "pmpro_user_subscribe_to_mailpoet", true);
+
+	if( !empty( $subscribed ) && $subscribed == '1' ) { $subscribed = __('Yes', 'mailpoet_paid_memberships_pro_addon'); }
+	else{ $subscribed = __('No', 'mailpoet_paid_memberships_pro_addon'); }
+
+	echo '<li><strong>'.__('Subscribed to Newsletter', 'mailpoet_paid_memberships_pro_addon').':</strong> '. $subscribed .'</li>';
+}
+
 ?>
