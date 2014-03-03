@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Adds a checkbox on checkout page for your customers to subscribe to your MailPoet newsletters.
 
 ## Localization
-* English (US)[Default] - always included. mailpoet-paid-memberships-pro-addon.pot file in language folder for translations.
+* English (en_US) [Default] - always included. mailpoet-paid-memberships-pro-addon.pot file in language folder for translations.
 
 If you would like to do a translation for the plugin, you can do so via Transifex.  (https://www.transifex.com/projects/p/mailpoet-paid-memberships-pro-add-on/)
 
@@ -68,6 +68,6 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 ## Changelog
 
-__1.0.0 - 28/02/2014__
+__1.0.0 - 03/03/2014__
 
 * Working Progress Release

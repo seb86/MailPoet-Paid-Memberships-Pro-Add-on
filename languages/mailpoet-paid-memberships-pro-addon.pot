@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailPoet Paid Memberships Pro Addon\n"
-"POT-Creation-Date: 2014-03-03 03:36+0100\n"
-"PO-Revision-Date: 2014-03-03 03:36+0100\n"
+"POT-Creation-Date: 2014-03-03 13:55+0100\n"
+"PO-Revision-Date: 2014-03-03 13:55+0100\n"
 "Last-Translator: Sebastien <sebastien@ocean-themes.com>\n"
 "Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
 "Language: en_US\n"
@@ -128,7 +128,6 @@ msgstr ""
 
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:41
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:59
-#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:154
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:164
 msgid "Lists"
 msgstr ""
@@ -142,7 +141,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:78
-msgid "Settings Title"
+msgid "General Settings"
 msgstr ""
 
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:80
@@ -169,6 +168,10 @@ msgstr ""
 
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:96
 msgid "Yes, please subscribe me to your newsletter."
+msgstr ""
+
+#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:154
+msgid "MailPoet Lists"
 msgstr ""
 
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:163
