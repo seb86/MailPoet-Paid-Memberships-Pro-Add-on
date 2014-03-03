@@ -64,7 +64,9 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 ## Screenshots
 
-1. Coming Soon
+1. Checkout page, a checkbox field is added to the checkout page allowing the customer to subscribe to the newsletter/s you select.
+2. General Settings, enable the checkbox to appear on the checkout page along with the label of your choosing.
+3. MailPoet Lists, select the lists the customer will be subscribed to.
 
 ## Frequently Asked Questions 
 
