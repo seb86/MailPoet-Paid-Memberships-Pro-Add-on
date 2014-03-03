@@ -53,7 +53,7 @@ if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon_Admin' ) ) {
 				case 'user' :
 				case 'profile' :
 				case 'user-edit' :
-					//include( 'class-mailpoet-paid-memberships-pro-addon-admin-profile.php' );
+					include( 'class-mailpoet-paid-memberships-pro-addon-admin-profile.php' );
 				break;
 			}
 		}

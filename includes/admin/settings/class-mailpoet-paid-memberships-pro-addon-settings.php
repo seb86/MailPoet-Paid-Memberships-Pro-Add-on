@@ -92,7 +92,6 @@ class MailPoet_Paid_Memberships_Pro_Addon_Settings extends MailPoet_Paid_Members
 				array(
 					'title' => __( 'Checkbox label', 'mailpoet_paid_memberships_pro_add_on' ),
 					'desc' 		=> __('Enter a message to place next to the checkbox.', 'mailpoet_paid_memberships_pro_add_on' ),
-					'desc_tip' 	=> true,
 					'id' 		=> 'mailpoet_paid_memberships_pro_add_on_checkout_label',
 					'default' 	=> __('Yes, please subscribe me to your newsletter.', 'mailpoet_paid_memberships_pro_add_on' ),
 					'type' 		=> 'text',

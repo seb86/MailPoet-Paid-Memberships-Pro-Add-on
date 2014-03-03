@@ -59,7 +59,7 @@ function mailpoet_pmpro_addon_after_checkout( $user_id ) {
 
 	// If the check box has been ticked then the customer is added to the MailPoet lists enabled.
 	if($mailpoet_checkout_subscribe == 1){
-		$checkout_lists = get_option('');
+		$checkout_lists = get_option('mailpoet_paid_memberships_pro_subscribe_too');
 
 		$user_data = array(
 			'email' 	=> $email,
@@ -96,10 +96,10 @@ function mailpoet_pmpro_addon_email_body( $body, $pmpro_email ) {
 
 		// Add subscription confirmation above the billing information or above the log link
 		if( strpos( $body, "Billing Information:" ) ) {
-			$body = str_replace("Billing Information:", "Subscribed to Newsletter:<br />" . $subscribed . "<br /><br />Billing Information:", $body);
+			$body = str_replace("Billing Information:", "Subscribed to Newsletter: " . $subscribed . "<br /><br />Billing Information:", $body);
 		}
 		else {
-			$body = str_replace("Log in to your membership", "Subscribed to Newsletter:<br />" . $subscribed . "<br /><br />Log in to your membership", $body);
+			$body = str_replace("Log in to your membership", "Subscribed to Newsletter: " . $subscribed . "<br /><br />Log in to your membership", $body);
 		}
 	}
 
