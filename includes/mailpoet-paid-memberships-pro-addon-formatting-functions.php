@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @param string $var
  * @return string
  */
-function mailpoet_paid_memberships_pro_addon_clean( $var ) {
+function mailpoet_paid_memberships_pro_add_on_clean( $var ) {
 	return sanitize_text_field( $var );
 }
 

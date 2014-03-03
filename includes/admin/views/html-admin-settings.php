@@ -11,8 +11,8 @@
 		</h2>
 
 		<?php
-		do_action( 'mailpoet_paid_memberships_pro_sections_' . $current_tab );
-		do_action( 'mailpoet_paid_memberships_pro_settings_' . $current_tab );
+		do_action( 'mailpoet_paid_memberships_pro_add_on_sections_' . $current_tab );
+		do_action( 'mailpoet_paid_memberships_pro_add_on_settings_' . $current_tab );
 		?>
 
 		<p class="submit">

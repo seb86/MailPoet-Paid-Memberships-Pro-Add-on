@@ -276,10 +276,6 @@ final class MailPoet_Paid_Memberships_Pro_Addon {
 			$this->admin_includes();
 		}
 
-		if ( defined('DOING_AJAX') ) {
-			$this->ajax_includes();
-		}
-
 		if ( ! is_admin() || defined('DOING_AJAX') ) {
 			$this->frontend_includes();
 		}
@@ -296,16 +292,6 @@ final class MailPoet_Paid_Memberships_Pro_Addon {
 		include_once( 'includes/admin/mailpoet-paid-memberships-pro-addon-admin-hooks.php' ); // Hooks used in the admin
 		include_once( 'includes/admin/class-mailpoet-paid-memberships-pro-addon-install.php' ); // Install plugin
 		include_once( 'includes/admin/class-mailpoet-paid-memberships-pro-addon-admin.php' ); // Admin section
-	}
-
-	/**
-	 * Include required ajax files.
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function ajax_includes() {
-		//include_once( 'includes/mailpoet-paid-memberships-pro-addon-ajax.php' ); // Ajax functions for admin and the front-end
 	}
 
 	/**
