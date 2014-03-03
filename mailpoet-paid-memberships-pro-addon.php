@@ -210,19 +210,19 @@ final class MailPoet_Paid_Memberships_Pro_Addon {
 			return false;
 		}
 
-		// Line 197 to 211 does not want to work for some reason so until I can fix it this is disabled for the moment.
-		/*if( !is_plugin_active( 'paid-memberships-pro/paid-memberships-pro.php' ) && !is_plugin_active( 'wysija-newsletters/index.php' ) ) {
+		// Line 214 to 228 does not want to work for some reason. It should but it's not. Note: Debug last
+		/*if ( !is_plugin_active( 'paid-memberships-pro/paid-memberships-pro.php' ) && !is_plugin_active( 'wysija-newsletters/index.php' ) ) {
 			add_action('admin_notices', array( &$this, 'display_req_notice_mailpoet' ) );
 			add_action('admin_notices', array( &$this, 'display_req_notice_paid_memberships_pro' ) );
 			return false;
 		}
 
-		if( !is_plugin_active( 'wysija-newsletters/index.php' ) ) {
+		if ( !is_plugin_active( 'wysija-newsletters/index.php' ) ) {
 			add_action('admin_notices', array( &$this, 'display_req_notice_mailpoet' ) );
 			return false;
 		}
 
-		if( !is_plugin_active( 'paid-memberships-pro/paid-memberships-pro.php' ) ) {
+		if ( !is_plugin_active( 'paid-memberships-pro/paid-memberships-pro.php' ) ) {
 			add_action('admin_notices', array( &$this, 'display_req_notice_paid_memberships_pro' ) );
 			return false;
 		}*/
@@ -375,31 +375,12 @@ final class MailPoet_Paid_Memberships_Pro_Addon {
 		global $wp_locale;
 
 		if ( is_admin() ) {
-			// Main Plugin Javascript
-			//$this->load_file( self::slug . '_admin_script', '/assets/js/admin/mailpoet-paid-memberships-pro-addon' . MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_SCRIPT_MODE . '.js', true, array('jquery'), MailPoet_Paid_Memberships_Pro_Addon()->version );
-			$this->load_file( self::slug . '_admin_script', '/assets/js/admin/mailpoet-paid-memberships-pro-addon.js', true, array('jquery'), MailPoet_Paid_Memberships_Pro_Addon()->version );
-
-			// Variables for JS scripts
-			wp_localize_script( self::slug . '_admin_script', 'mailpoet_paid_memberships_pro_addon_admin_params', apply_filters( 'mailpoet_paid_memberships_pro_addon_admin_params', array(
-				'plugin_url' => $this->plugin_url(),
-				)
-			) );
-
-			// Stylesheets
+			// Stylesheet
 			$this->load_file( self::slug . '_admin_style', '/assets/css/admin/mailpoet-paid-memberships-pro-addon.css' );
 		}
 		else {
-			$this->load_file( self::slug . '-script', '/assets/js/frontend/mailpoet-paid-memberships-pro-addon' . MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_SCRIPT_MODE . '.js', true );
-
 			// Stylesheet
 			$this->load_file( self::slug . '-style', '/assets/css/mailpoet-paid-memberships-pro-addon.css' );
-
-			// Variables for JS scripts
-			wp_localize_script( self::slug . '-script', 'mailpoet_paid_memberships_pro_addon_params', apply_filters( 'mailpoet_paid_memberships_pro_addon_params', array(
-				'plugin_url' => $this->plugin_url(),
-				)
-			) );
-
 		} // end if/else
 	} // end register_scripts_and_styles
 

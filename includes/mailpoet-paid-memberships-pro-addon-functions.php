@@ -10,9 +10,7 @@
 
 // Add a checkbox field to the checkout page.
 function mailpoet_pmpro_addon_checkout_checkbox() {
-	global $bfirstname, $blastname;
 ?>
-
 	<table id="pmpro_mailpoet_fields" class="pmpro_checkout top1em" width="100%" cellpadding="0" cellspacing="0" border="0">
 	<thead>
 		<tr>
@@ -22,13 +20,12 @@ function mailpoet_pmpro_addon_checkout_checkbox() {
 	<tbody>
 		<tr>
 			<td>
-				<p id="sameasbilling_wrapper">
-				<input type="checkbox" id="sameasbilling" name="sameasbilling" value="1" <?php if(!empty($sameasbilling)) { ?>checked="checked"<?php } ?> /> 
-				<label for="sameasbilling" style="float: none; font-weight: normal; cursor: pointer;">
+				<p id="pmpro_user_subscribe_to_mailpoet_wrapper">
+				<input type="checkbox" id="pmpro_user_subscribe_to_mailpoet" name="pmpro_user_subscribe_to_mailpoet" value="1" <?php if(!empty($sameasbilling)) { ?>checked="checked"<?php } ?> /> 
+				<label for="pmpro_user_subscribe_to_mailpoet">
 				<?php echo apply_filters( 'mailpoet_pmpro_addon_subscribe_to_newsletter_label', __('Subscribe to our Newsletter', 'mailpoet_paid_memberships_pro_addon') ); ?>
 				</label>
-		</p>
-
+				</p>
 			</td>
 		</tr>
 	</tbody>
@@ -40,13 +37,13 @@ function mailpoet_pmpro_addon_checkout_checkbox() {
 function mailpoet_pmpro_addon_valid_gateways( $gateways ) {
 	global $subscribe;
 
-	if( !empty( $_REQUEST['sameasbilling'] ) ) {
-		$sameasbilling = true;	//we'll get the fields further down below
+	if( !empty( $_REQUEST['pmpro_user_subscribe_to_mailpoet'] ) ) {
+		$pmpro_user_subscribe_to_mailpoet = true;	//we'll get the fields further down below
 	}
-	elseif( !empty( $_SESSION['sameasbilling'] ) ) {
+	elseif( !empty( $_SESSION['pmpro_user_subscribe_to_mailpoet'] ) ) {
 		// coming back from PayPal.
-		$sameasbilling = true;
-		unset($_SESSION['sameasbilling']);		
+		$pmpro_user_subscribe_to_mailpoet = true;
+		unset($_SESSION['pmpro_user_subscribe_to_mailpoet']);		
 	}
 
 	return $gateways;
@@ -56,17 +53,18 @@ function mailpoet_pmpro_addon_valid_gateways( $gateways ) {
 function mailpoet_pmpro_addon_after_checkout( $user_id ) {
 	$firstname = get_user_meta($user_id, "pmpro_bfirstname", true);
 	$lastname = get_user_meta($user_id, "pmpro_blastname", true);
+	$email = get_user_meta($user_id, "user_email", true);
 
-	$mailpoet_checkout_subscribe = isset($_POST['mailpoet_checkout_subscribe']) ? 1 : 0;
+	$mailpoet_checkout_subscribe = isset($_POST['pmpro_user_subscribe_to_mailpoet']) ? 1 : 0;
 
 	// If the check box has been ticked then the customer is added to the MailPoet lists enabled.
 	if($mailpoet_checkout_subscribe == 1){
-		$checkout_lists = mailpoet_lists();
+		$checkout_lists = get_option('');
 
 		$user_data = array(
-			'email' 	=> $_POST['billing_email'],
-			'firstname' => $_POST['billing_first_name'],
-			'lastname' 	=> $_POST['billing_last_name']
+			'email' 	=> $email,
+			'firstname' => $firstname,
+			'lastname' 	=> $lastname
 		);
 
 		$data_subscriber = array(
@@ -78,7 +76,7 @@ function mailpoet_pmpro_addon_after_checkout( $user_id ) {
 		$userHelper->addSubscriber($data_subscriber);
 	}
 	
-	update_user_meta($user_id, "user_subscribe_to_mailpoet_pmpro", $mailpoet_checkout_subscribe);
+	update_user_meta($user_id, "pmpro_user_subscribe_to_mailpoet", $mailpoet_checkout_subscribe);
 }
 
 // Adding subscription confirmation to email
@@ -91,7 +89,10 @@ function mailpoet_pmpro_addon_email_body( $body, $pmpro_email ) {
 	if( !empty( $user_id ) ) {
 		$firstname = get_user_meta($user_id, "pmpro_bfirstname", true);
 		$lastname = get_user_meta($user_id, "pmpro_blastname", true);
-		$subscribed = get_user_meta($user_id, "mailpoet_pmpro_addon_subscribed", true);
+		$subscribed = get_user_meta($user_id, "pmpro_user_subscribe_to_mailpoet", true);
+
+		if( $subscribed == '1' ) { $subscribed = __('Yes', 'mailpoet_paid_memberships_pro_addon'); }
+		else{ $subscribed = __('No', 'mailpoet_paid_memberships_pro_addon'); }
 
 		// Add subscription confirmation above the billing information or above the log link
 		if( strpos( $body, "Billing Information:" ) ) {

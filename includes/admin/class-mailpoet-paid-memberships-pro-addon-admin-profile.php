@@ -38,7 +38,7 @@ if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon_Admin_Profile' ) ) {
 				'billing' => array(
 					'title' => __( 'MailPoet', 'mailpoet_paid_memberships_pro_addon' ),
 					'fields' => array(
-						'user_subscribe_to_mailpoet' => array(
+						'pmpro_user_subscribe_to_mailpoet' => array(
 								'label' 		=> __( 'Subscribe to MailPoet', 'mailpoet_paid_memberships_pro_addon' ),
 								'description' 	=> __('If checked, you are subscribed to the newsletters provided by this site.', 'mailpoet_paid_memberships_pro_addon'),
 								'type' 			=> 'checkbox'
