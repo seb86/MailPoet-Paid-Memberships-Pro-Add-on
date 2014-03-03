@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailPoet Paid Memberships Pro Addon\n"
-"POT-Creation-Date: 2014-03-03 13:55+0100\n"
-"PO-Revision-Date: 2014-03-03 13:55+0100\n"
+"POT-Creation-Date: 2014-03-03 17:35+0100\n"
+"PO-Revision-Date: 2014-03-03 17:35+0100\n"
 "Last-Translator: Sebastien <sebastien@ocean-themes.com>\n"
 "Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
 "Language: en_US\n"
@@ -105,10 +105,6 @@ msgstr ""
 msgid "Your settings have been saved."
 msgstr ""
 
-#: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-settings.php:108
-msgid "The changes you made will be lost if you navigate away from this page."
-msgstr ""
-
 #: includes/admin/class-mailpoet-paid-memberships-pro-addon-install.php:125
 msgid "What's new:"
 msgstr ""
@@ -128,12 +124,12 @@ msgstr ""
 
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:41
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:59
-#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:164
+#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:165
 msgid "Lists"
 msgstr ""
 
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:61
-#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:155
+#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:156
 msgid ""
 "Here you can assign the customer to the lists you enable when they "
 "subscribe. Simply tick the lists you want your customers to subscribe to and "
@@ -166,15 +162,15 @@ msgstr ""
 msgid "Enter a message to place next to the checkbox."
 msgstr ""
 
-#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:96
+#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:97
 msgid "Yes, please subscribe me to your newsletter."
 msgstr ""
 
-#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:154
+#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:155
 msgid "MailPoet Lists"
 msgstr ""
 
-#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:163
+#: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:164
 msgid "Enabled"
 msgstr ""
 
@@ -199,12 +195,20 @@ msgid ""
 "Are you sure you wish to run the updater now?"
 msgstr ""
 
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:19
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:17
 msgid "Newsletter"
 msgstr ""
 
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:28
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:26
 msgid "Subscribe to our Newsletter"
+msgstr ""
+
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:94
+msgid "Yes"
+msgstr ""
+
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:95
+msgid "No"
 msgstr ""
 
 #: mailpoet-paid-memberships-pro-addon.php:240

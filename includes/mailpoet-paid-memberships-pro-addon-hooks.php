@@ -17,6 +17,7 @@ add_action( 'pmpro_checkout_after_billing_fields', 'mailpoet_pmpro_addon_checkou
 add_action( 'pmpro_after_checkout', 'mailpoet_pmpro_addon_after_checkout', 10, 1 );
 
 // Filters
+add_filter( 'mailpoet_pmpro_addon_subscribe_to_newsletter_label', 'label_checkbox_on_checkout' );
 add_filter( 'pmpro_valid_gateways', 'mailpoet_pmpro_addon_valid_gateways' );
 add_filter( 'pmpro_email_body', 'mailpoet_pmpro_addon_email_body', 10, 2 );
 

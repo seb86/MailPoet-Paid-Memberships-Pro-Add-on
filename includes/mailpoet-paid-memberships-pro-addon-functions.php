@@ -21,7 +21,7 @@ function mailpoet_pmpro_addon_checkout_checkbox() {
 		<tr>
 			<td>
 				<p id="pmpro_user_subscribe_to_mailpoet_wrapper">
-				<input type="checkbox" id="pmpro_user_subscribe_to_mailpoet" name="pmpro_user_subscribe_to_mailpoet" value="1" <?php if(!empty($sameasbilling)) { ?>checked="checked"<?php } ?> /> 
+				<input type="checkbox" id="pmpro_user_subscribe_to_mailpoet" name="pmpro_user_subscribe_to_mailpoet" value="1" /> 
 				<label for="pmpro_user_subscribe_to_mailpoet">
 				<?php echo apply_filters( 'mailpoet_pmpro_addon_subscribe_to_newsletter_label', __('Subscribe to our Newsletter', 'mailpoet_paid_memberships_pro_addon') ); ?>
 				</label>
@@ -106,4 +106,14 @@ function mailpoet_pmpro_addon_email_body( $body, $pmpro_email ) {
 	return $body;
 }
 
+function label_checkbox_on_checkout() {
+	$label = get_option('mailpoet_paid_memberships_pro_add_on_checkout_label', true);
+
+	if( !empty( $label ) ) {
+		return $label;
+	}
+	else{
+		return;
+	}
+}
 ?>
