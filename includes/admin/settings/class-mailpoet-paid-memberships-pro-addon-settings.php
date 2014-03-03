@@ -75,7 +75,7 @@ class MailPoet_Paid_Memberships_Pro_Addon_Settings extends MailPoet_Paid_Members
 			return apply_filters( 'mailpoet_paid_memberships_pro_add_on_settings', array(
 
 				array(
-					'title' => __( 'Settings Title', 'mailpoet_paid_memberships_pro_add_on' ), 
+					'title' => __( 'General Settings', 'mailpoet_paid_memberships_pro_add_on' ), 
 					'type' => 'title', 
 					'desc' => __('Now your customers can subscribe to newsletters you have created with MailPoet. Simple setup your settings below and press "Save Changes".', 'mailpoet_paid_memberships_pro_add_on'),
 					'id' => 'general_options'
@@ -151,7 +151,7 @@ class MailPoet_Paid_Memberships_Pro_Addon_Settings extends MailPoet_Paid_Members
 	public function output_lists() {
 		global $current_section, $wpdb;
 		?>
-		<h3><?php _e( 'Lists', 'mailpoet_paid_memberships_pro_add_on' ); ?></h3>
+		<h3><?php _e( 'MailPoet Lists', 'mailpoet_paid_memberships_pro_add_on' ); ?></h3>
 		<p><?php _e( 'Here you can assign the customer to the lists you enable when they subscribe. Simply tick the lists you want your customers to subscribe to and press "Save Changes".', 'mailpoet_paid_memberships_pro_add_on' ); ?></p>
 		<table class="widefat">
 			<thead>
