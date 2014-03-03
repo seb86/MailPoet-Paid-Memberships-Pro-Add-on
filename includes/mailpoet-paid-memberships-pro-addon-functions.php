@@ -106,6 +106,7 @@ function mailpoet_pmpro_addon_email_body( $body, $pmpro_email ) {
 	return $body;
 }
 
+// This filters the checkbox label on the checkout page.
 function label_checkbox_on_checkout() {
 	$label = get_option('mailpoet_paid_memberships_pro_add_on_checkout_label', true);
 
@@ -113,7 +114,7 @@ function label_checkbox_on_checkout() {
 		return $label;
 	}
 	else{
-		return;
+		return __('Subscribe to our Newsletter', 'mailpoet_paid_memberships_pro_addon');
 	}
 }
 ?>
