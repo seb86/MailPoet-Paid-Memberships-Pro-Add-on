@@ -68,7 +68,7 @@ class MailPoet_Paid_Memberships_Pro_Addon_Admin_Help {
 
 		$screen->set_help_sidebar(
 			'<p><strong>' . __( 'For more information:', MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_TEXT_DOMAIN ) . '</strong></p>' .
-			'<p><a href="http://wordpress.org/plugins/mailpoet-paid-memberships-pro-add-on/" target="_blank">' . __( 'Project on WordPress.org', MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_TEXT_DOMAIN ) . '</a></p>' .
+			'<p><a href="' . MailPoet_Paid_Memberships_Pro_Addon()->web_url . '" target="_blank">' . __( 'Project on WordPress.org', MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_TEXT_DOMAIN ) . '</a></p>' .
 			'<p><a href="' . GITHUB_REPO_URL . '" target="_blank">' . __( 'Project on Github', MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_TEXT_DOMAIN ) . '</a></p>'
 		);
 	}

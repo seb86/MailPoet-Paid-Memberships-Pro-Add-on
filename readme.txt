@@ -28,7 +28,7 @@ I'll acknowledge your contribution here with either your full name or username g
 
 = Documentation =
 
-For all documentation on this plugin go to: http://docs.sebs-studio.com/user-guide/extension/mailpoet-paid-memberships-pro-add-on/
+For all documentation on this plugin go to: https://github.com/seb86/MailPoet-Paid-Memberships-Pro-Add-on/wiki/
 
 = Contributing =
 
@@ -55,10 +55,6 @@ The manual installation method involves downloading my plugin and uploading it t
 2. Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your WordPress installation's wp-content/plugins/ directory.
 3. Activate the plugin from the Plugins menu within the WordPress admin.
 
-= Setting up the Plugin =
-
-- Coming Soon
-
 = Upgrading =
 
 Automatic updates should work like a charm; as always though, ensure you backup your site just in case.
@@ -71,9 +67,9 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 == Changelog ==
 
-= 1.0.0 - 03/03/2014 =
+= 1.0.0 - 25/03/2014 =
 
-* Working Progress Release
+* Initial Release
 
 == Upgrade Notice ==
 

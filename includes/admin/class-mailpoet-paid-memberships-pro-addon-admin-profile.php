@@ -36,7 +36,7 @@ if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon_Admin_Profile' ) ) {
 		public function get_user_meta_fields() {
 			$show_fields = apply_filters('mailpoet_paid_memberships_pro_addon_user_meta_fields', array(
 				'mailpoet' => array(
-					'title' => __( 'MailPoet', 'mailpoet_paid_memberships_pro_addon' ),
+					'title' => 'MailPoet',
 					'fields' => array(
 						'pmpro_user_subscribe_to_mailpoet' => array(
 								'label' 		=> __( 'Subscribe to MailPoet', 'mailpoet_paid_memberships_pro_addon' ),

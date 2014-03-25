@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailPoet Paid Memberships Pro Addon\n"
-"POT-Creation-Date: 2014-03-19 16:32+0100\n"
-"PO-Revision-Date: 2014-03-19 16:32+0100\n"
-"Last-Translator: Sebastien <sebastien@ocean-themes.com>\n"
+"POT-Creation-Date: 2014-03-25 05:47+0100\n"
+"PO-Revision-Date: 2014-03-25 05:47+0100\n"
+"Last-Translator: Sebastien <sebastien@sebs-studio.com>\n"
 "Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
@@ -84,10 +84,6 @@ msgstr ""
 msgid "MailPoet PMPro"
 msgstr ""
 
-#: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-profile.php:39
-msgid "MailPoet"
-msgstr ""
-
 #: includes/admin/class-mailpoet-paid-memberships-pro-addon-admin-profile.php:42
 msgid "Subscribe to MailPoet"
 msgstr ""
@@ -107,10 +103,6 @@ msgstr ""
 
 #: includes/admin/class-mailpoet-paid-memberships-pro-addon-install.php:125
 msgid "What's new:"
-msgstr ""
-
-#: includes/admin/mailpoet-paid-memberships-pro-addon-admin-functions.php:19
-msgid "MailPoet Paid Memberships Pro Add-on"
 msgstr ""
 
 #: includes/admin/settings/class-mailpoet-paid-memberships-pro-addon-settings.php:25
@@ -195,27 +187,37 @@ msgid ""
 "Are you sure you wish to run the updater now?"
 msgstr ""
 
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:17
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:18
 msgid "Newsletter"
 msgstr ""
 
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:26
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:117
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:27
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:157
 msgid "Subscribe to our Newsletter"
 msgstr ""
 
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:94
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:127
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:50
+msgid "Please complete all required fields."
+msgstr ""
+
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:134
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:167
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:180
 msgid "Yes"
 msgstr ""
 
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:95
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:128
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:135
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:168
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:183
 msgid "No"
 msgstr ""
 
-#: includes/mailpoet-paid-memberships-pro-addon-functions.php:130
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:170
 msgid "Subscribed to Newsletter"
+msgstr ""
+
+#: includes/mailpoet-paid-memberships-pro-addon-functions.php:186
+msgid "Newsletter Subscription"
 msgstr ""
 
 #: mailpoet-paid-memberships-pro-addon.php:245
