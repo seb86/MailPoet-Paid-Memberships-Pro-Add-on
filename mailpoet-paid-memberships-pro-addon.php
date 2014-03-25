@@ -294,7 +294,7 @@ final class MailPoet_Paid_Memberships_Pro_Addon {
 	 * @return void
 	 */
 	public function admin_includes() {
-		include_once( 'includes/admin/mailpoet-paid-memberships-pro-addon-admin-hooks.php' ); // Hooks used in the admin
+		//include_once( 'includes/admin/mailpoet-paid-memberships-pro-addon-admin-hooks.php' ); // Hooks used in the admin
 		include_once( 'includes/admin/class-mailpoet-paid-memberships-pro-addon-install.php' ); // Install plugin
 		include_once( 'includes/admin/class-mailpoet-paid-memberships-pro-addon-admin.php' ); // Admin section
 	}
