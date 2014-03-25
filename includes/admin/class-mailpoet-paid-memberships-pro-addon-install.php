@@ -106,10 +106,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				if ( preg_match( $regexp, $response['body'], $matches ) ) {
 					$notices = (array) preg_split('~[\r\n]+~', trim( $matches[1] ) );
 
-					echo '<div style="font-weight: normal; background: #cc99c2; color: #fff !important; border: 1px solid #b76ca9; padding: 9px; margin: 9px 0;">';
+					echo '<div style="font-weight: normal; background: #CD1049; color: #fff !important; border: 2px solid rgba(205,16,73,0.25); padding: 8px; margin: 6px 0;">';
 
 					foreach ( $notices as $index => $line ) {
-						echo '<p style="margin: 0; font-size: 1.1em; color: #fff; text-shadow: 0 1px 1px #b574a8;">' . preg_replace( '~\[([^\]]*)\]\(([^\)]*)\)~', '<a href="${2}">${1}</a>', $line ) . '</p>';
+						echo '<p style="margin: 0; font-size: 1.1em; color: #fff; text-shadow: 0 1px 1px #B6BBDF;">' . preg_replace( '~\[([^\]]*)\]\(([^\)]*)\)~', '<a href="${2}">${1}</a>', $line ) . '</p>';
 					}
 
 					echo '</div>';

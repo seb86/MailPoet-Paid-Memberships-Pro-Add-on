@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @return array
  */
 function mailpoet_paid_memberships_pro_addon_get_screen_ids() {
-	$mailpoet_paid_memberships_pro_addon_screen_id = strtolower( str_replace ( ' ', '-', __( 'MailPoet Paid Memberships Pro Add-on', 'mailpoet_paid_memberships_pro_addon' ) ) );
+	$mailpoet_paid_memberships_pro_addon_screen_id = strtolower( 'MailPoet Paid Memberships Pro Add-on');
 
-	return apply_filters( 'mailpoet_paid_memberships_pro_addon_screen_ids', array(
+	return array(
 		'toplevel_page_' . $mailpoet_paid_memberships_pro_addon_screen_id,
 		'settings_page_pmpro-mailpoet',
-	) );
+	);
 }
 
 /**

@@ -51,7 +51,7 @@ class MailPoet_Paid_Memberships_Pro_Addon_Admin_Help {
 
 				'<p>' . sprintf(__( 'After <a href="%s">reading the documentation</a>, for further assistance you can use the <a href="%s">community forum</a>.', MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_TEXT_DOMAIN ), MailPoet_Paid_Memberships_Pro_Addon()->doc_url, 'http://wordpress.org/support/plugin/mailpoet-paid-memberships-pro-add-on' ) . '</p>' .
 
-				'<p><a href="' . 'http://wordpress.org/support/plugin/mailpoet-paid-memberships-pro-add-on' . '" class="button">' . __( 'Community Support', MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_TEXT_DOMAIN ) . '</a></p>'
+				'<p><a href="' . 'http://wordpress.org/support/plugin/mailpoet-paid-memberships-pro-add-on' . '" class="button button-primary">' . __( 'Community Support', MAILPOET_PAID_MEMBERSHIPS_PRO_ADDON_TEXT_DOMAIN ) . '</a></p>'
 
 		) );
 

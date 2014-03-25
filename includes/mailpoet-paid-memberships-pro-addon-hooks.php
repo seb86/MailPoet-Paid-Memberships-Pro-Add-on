@@ -19,7 +19,9 @@ add_action( 'pmpro_invoice_bullets_bottom', 'mailpoet_pmpro_addon_confirmation',
 
 // Filters
 add_filter( 'mailpoet_pmpro_addon_subscribe_to_newsletter_label', 'label_checkbox_on_checkout' );
+add_filter( 'pmpro_registration_checks', 'mailpoet_pmpro_registration_checks' );
 add_filter( 'pmpro_valid_gateways', 'mailpoet_pmpro_addon_valid_gateways' );
 add_filter( 'pmpro_email_body', 'mailpoet_pmpro_addon_email_body', 10, 2 );
+add_filter( 'pmpro_confirmation_message', 'mailpoet_pmpro_confirmation_message', 10, 2 );
 
 ?>

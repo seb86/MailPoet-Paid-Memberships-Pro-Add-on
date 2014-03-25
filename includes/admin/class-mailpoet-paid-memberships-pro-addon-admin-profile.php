@@ -56,9 +56,6 @@ if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon_Admin_Profile' ) ) {
 		 * @param mixed $user User (object) being displayed
 		 */
 		public function add_user_meta_fields( $user ) {
-			if ( ! current_user_can( 'manage_options' ) )
-				return;
-
 			$show_fields = $this->get_user_meta_fields();
 
 			foreach( $show_fields as $fieldset ) {
