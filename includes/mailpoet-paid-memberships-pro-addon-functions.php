@@ -162,7 +162,7 @@ function label_checkbox_on_checkout() {
 function mailpoet_pmpro_addon_confirmation() {
 	global $current_user, $pmpro_invoice;
 
-	$subscribed = get_user_meta($current_user->id, "pmpro_user_subscribe_to_mailpoet", true);
+	$subscribed = get_user_meta($current_user->ID, "pmpro_user_subscribe_to_mailpoet", true);
 
 	if( !empty( $subscribed ) && $subscribed == '1' ) { $subscribed = __('Yes', 'mailpoet_paid_memberships_pro_addon'); }
 	else{ $subscribed = __('No', 'mailpoet_paid_memberships_pro_addon'); }
@@ -174,7 +174,7 @@ function mailpoet_pmpro_addon_confirmation() {
 function mailpoet_pmpro_confirmation_message($confirmation_message, $pmpro_invoice) {
 	global $current_user;
  
-	$subscribed = get_user_meta($current_user->id, "pmpro_user_subscribe_to_mailpoet", true);
+	$subscribed = get_user_meta($current_user->ID, "pmpro_user_subscribe_to_mailpoet", true);
 
 	if( !empty( $subscribed ) && $subscribed == '1' ) { 
 		$subscribed = __('Yes', 'mailpoet_paid_memberships_pro_addon');
