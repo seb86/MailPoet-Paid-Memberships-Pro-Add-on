@@ -114,7 +114,7 @@ function mailpoet_pmpro_addon_after_checkout( $user_id ) {
 				'user_list' => array('list_ids' => $checkout_lists)
 			);
 
-			$userHelper = &WYSIJA::get('user','helper');
+			$userHelper = WYSIJA::get('user','helper');
 			$userHelper->addSubscriber($data_subscriber);
 		}
 
