@@ -139,13 +139,13 @@ if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon_Admin_Profile' ) ) {
 
 		// This subscribes the user to all lists selected by the admin in this plugin settings.
 		public function mailpoet_subscribe_user( $list_ids = '', $userid ) {
-			$userHelper = &WYSIJA::get('user','helper');
+			$userHelper = WYSIJA::get('user','helper');
 			$userHelper->subscribe( $userid, true, false, $list_ids );
 		}
 
 		// This unsubscribes the user to all lists selected by the admin in this plugin settings.
 		public function mailpoet_unsubscribe_user( $list_ids = '', $userid ) {
-			$userHelper = &WYSIJA::get('user','helper');
+			$userHelper = WYSIJA::get('user','helper');
 			$userHelper->subscribe( $userid, false, false, $list_ids );
 		}
 
