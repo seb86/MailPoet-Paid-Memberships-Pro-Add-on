@@ -111,11 +111,9 @@ if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon_Admin_Profile' ) ) {
 				foreach( $fieldset['fields'] as $key => $field ) {
 					if ( isset( $_POST[ $key ] ) ) {
 						update_user_meta( $user_id, $key, mailpoet_paid_memberships_pro_add_on_clean( $_POST[ $key ] ) );
-					}
-
-					// This saves single checkbox field values.
-					if ( $field['type'] == 'checkbox' ) {
-						update_user_meta( $user_id, $key, mailpoet_paid_memberships_pro_add_on_clean( $_POST[ $key ] ) );
+					} elseif( $field['type'] == 'checkbox' ) {
+						//value not set, so assume unchecked
+						update_user_meta( $user_id, $key, 0 );
 					}
 
 					// This subscribes the user to each MailPoet lists selected under 'Settings -> MailPoet PMPro -> Lists'
@@ -129,8 +127,10 @@ if ( ! class_exists( 'MailPoet_Paid_Memberships_Pro_Addon_Admin_Profile' ) ) {
 					// This unsubscribes the user from each MailPoet lists selected under 'Settings -> MailPoet PMPro -> Lists'
 					if ( !isset( $_POST[ 'pmpro_user_subscribe_to_mailpoet' ] ) || empty( $_POST[ 'pmpro_user_subscribe_to_mailpoet' ] ) ) {
 						$mailpoet_lists = get_option('mailpoet_paid_memberships_pro_subscribe_too');
-						foreach( $mailpoet_lists as $list_id ) {
-							$this->mailpoet_unsubscribe_user( $list_id, $user_id );
+						if(is_array($mailpoet_lists)) {
+							foreach( $mailpoet_lists as $list_id ) {
+								$this->mailpoet_unsubscribe_user( $list_id, $user_id );
+							}
 						}
 					}
 				}
