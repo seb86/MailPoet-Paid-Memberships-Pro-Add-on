@@ -46,12 +46,12 @@ function mailpoet_pmpro_registration_checks($okay) {
 	//only check if we're okay so far
 	if( !empty( $_REQUEST['pmpro_user_subscribe_to_mailpoet'] ) ) {
 		global $pmpro_msg, $pmpro_msgt, $pmpro_error_fields;
-
-		$required_fields = array( 'bemail' );
-
+	
 		//Check for username field while registration
 		if ( ! is_user_logged_in() ) {
-			$required_fields[] = 'username';
+			$required_fields = array('username', 'bemail');
+		} else {
+			$required_fields = array();
 		}
 
 		foreach($required_fields as $field) {
